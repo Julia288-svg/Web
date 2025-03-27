@@ -1,0 +1,36 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: #0000ff; /* колір гіперпосилань */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: #000080;
+}
+
+img {
+    width: 400px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #0000ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #000099;
+}
