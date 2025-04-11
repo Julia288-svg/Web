@@ -34,3 +34,68 @@ button {
 button:hover {
     background-color: #000099;
 }
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+      max-width: 600px;
+      width: 100%;
+    padding: 50px;
+    justify-items: center;
+  }
+
+  .menu img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+  }
+
+  .menu img:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+  }
+  .map-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .marker {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.6);
+    width: 20px;
+    height: 20px;
+    pointer-events: none; /* щоб не перешкоджати клікам */
+  }
