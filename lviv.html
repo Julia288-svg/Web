@@ -1,16 +1,113 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Львів</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Київ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e0f2ff, #ffffff);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      color: #003366;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      background-color: #0044cc;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #002a80;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      img {
+        width: 90%;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+      @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+
+      .container {
+        padding: 30px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    }
+  </style>
 </head>
 <body>
-    <h1>Львів</h1>
-    <img src="images/lviv.jpg" alt="Львів">
-    <p>Львів - культурна столиця України. Відомий своїми кав'ярнями, архітектурою та атмосферою затишку.</p>
+  <h1>Київ</h1>
+  <img src="images/kyiv.jpg" alt="Київ">
+  <p>Київ — столиця України, місто з багатою історією, красивими парками та стародавніми пам'ятками.</p>
 
-    <a href="https://uk.wikipedia.org/wiki/Львів" target="_blank">Джерело інформації</a> | 
+  <div>
+    <a href="https://uk.wikipedia.org/wiki/Київ" target="_blank">Джерело інформації</a>
     <a href="index.html">На головну</a>
+  </div>
 </body>
 </html>

@@ -1,101 +1,168 @@
 body {
-    background-color: #f0f8ff;
-    font-family: Arial, sans-serif;
+
+}/* === Шрифти === */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #eaf4ff, #ffffff);
+  color: #222;
+  line-height: 1.6;
 }
 
+/* === Заголовки === */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #004080;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* === Посилання === */
 a {
-    color: #0000ff; /* колір гіперпосилань */
-    text-decoration: none;
+  color: #0056cc;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-
 a:hover {
-    text-decoration: underline;
+  color: #002b80;
+  text-decoration: underline;
 }
 
-h1, h2 {
-    color: #000080;
+/* === Хедер === */
+header {
+  background-color: #004080;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-img {
-    width: 400px;
-    border-radius: 8px;
-    margin: 10px 0;
+/* === Основна сітка === */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-button {
-    background-color: #0000ff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+/* === Лівий і правий блок === */
+.left-block, .right-block {
+  background: #f9fcff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-button:hover {
-    background-color: #000099;
+/* === Центральний блок === */
+.center-block {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
+/* === Футер === */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* === Меню === */
 .menu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-      max-width: 600px;
-      width: 100%;
-    padding: 50px;
-    justify-items: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px 0;
+  justify-items: center;
+}
 
-  .menu img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 999px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    cursor: pointer;
+.menu img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.menu img:hover {
+  transform: scale(1.1);
+}
 
-  }
+/* === Таблиця === */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 14px;
+  text-align: center;
+}
+th {
+  background-color: #e0efff;
+  color: #003366;
+}
 
-  .menu img:hover {
-    transform: scale(1.1);
-  }
+/* === Карта === */
+.map-container {
+  position: relative;
+  display: block;
+  margin: 30px auto;
+  max-width: 100%;
+}
+.marker {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.7);
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+}
 
-  @media (max-width: 768px) {
-    .menu {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+/* === Відео === */
+.video-container {
+  text-align: center;
+  margin-top: 40px;
+}
+.video-container iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
 
-  @media (max-width: 480px) {
-    .menu {
-      grid-template-columns: 1fr;
-    }
-  }
+/* === Кнопки === */
+button {
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #002b80;
+}
 
-  table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 80%;
-    max-width: 600px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* === Адаптивність === */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
   }
-
-  th, td {
-    border: 1px solid #ccc;
-    padding: 12px;
-    text-align: center;
+  .left-block, .center-block, .right-block {
+    margin-bottom: 30px;
   }
-  .map-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  .marker {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0.6);
-    width: 20px;
-    height: 20px;
-    pointer-events: none; /* щоб не перешкоджати клікам */
-  }
+}
