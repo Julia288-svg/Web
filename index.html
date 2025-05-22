@@ -15,23 +15,24 @@
     }
 
     header, footer {
-      background-color: #0077cc;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
+    background: linear-gradient(to right, #3a8dde, #005fbf);
+    border-bottom: 4px solid #003f80;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   }
+.left, .right {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.brand-title {
+  color: white;
+}
     .main-layout {
       display: flex;
       flex-direction: row;
       padding: 20px;
       gap: 20px;
-    }
-
-    .left, .right {
-      width: 20%;
-      background-color: #f0f0f0;
-      padding: 15px;
     }
 
     .center {
@@ -46,7 +47,6 @@
     }
 
     .menu img {
-      width: 40px;
       margin: 5px;
     }
 
@@ -83,23 +83,67 @@
       padding: 8px;
       text-align: center;
     }
-    @media (max-width: 992px) {
+    .main-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+@media (max-width: 992px) {
   .main-layout {
-    flex-direction: column;
-    padding: 10px;
+    grid-template-columns: 1fr;
   }
+}
+
 
   .left, .right, .center {
     width: 100%;
     padding: 10px;
   }
 
-  .menu img {
-    width: 100%;
-    max-width: 300px;
-    display: block;
-    margin: 10px auto;
+  .menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.menu figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 120px;
+  margin: 0;
+}
+
+.menu img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 100px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
   }
+  .wrong {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+  }
+.menu img:hover {
+  transform: scale(1.05);
+}
+
+.menu figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
 
   .map-container {
     margin: 20px 0;
@@ -112,7 +156,6 @@
   header h1, footer p {
     font-size: 1.5rem;
   }
-}
 
 @media (max-width: 600px) {
   header, footer {
@@ -148,7 +191,7 @@
 <body>
 
   <header>
-    <h1>Подорожі Україною</h1>
+    <h1 class="brand-title">Подорожі Україною</h1>
     <p>Ласкаво просимо на сайт про найкрасивіші міста України!</p>
   </header>
 
@@ -178,13 +221,111 @@
     <main class="center">
       <h2>Головне меню</h2>
       <div class="menu">
-        <img src="images/Group.png" alt="Кнопка 1">
-        <img src="images/Group (5).png" alt="Кнопка 2">
-        <img src="images/Group 6 (1).png" alt="Кнопка 3">
-        <img src="images/Group (2).png" alt="Кнопка 4">
-        <img src="images/Group (3).png" alt="Кнопка 5">
-        <img src="images/Group (4).png" alt="Кнопка 6">
+        <figure>
+          <img src="images/Group.png" alt="Кнопка 1">
+          <figcaption>Київ</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Group (5).png" alt="Кнопка 2">
+          <figcaption>Львів</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Group 6 (1).png" alt="Кнопка 3">
+          <figcaption>Одеса</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Group (2).png" alt="Кнопка 4">
+          <figcaption>Харків</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Group (3).png" alt="Кнопка 5">
+          <figcaption>Дніпро</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Group (4).png" alt="Кнопка 6">
+          <figcaption>Запоріжжя</figcaption>
+        </figure>
       </div>
+      
+      <h2>Тест: Подорожі Україною</h2>
+      <form id="quizForm">
+        <ol>
+          <li>
+            Столиця України:
+            <br>
+            <label><input type="radio" name="q1" value="0"> Львів</label><br>
+            <label><input type="radio" name="q1" value="1"> Київ</label><br>
+            <label><input type="radio" name="q1" value="0"> Одеса</label><br>
+          </li>
+          <li>
+            Яке місто славиться фортецею та фестивалем повітряних куль?
+            <br>
+            <label><input type="radio" name="q2" value="1"> Кам'янець-Подільський</label><br>
+            <label><input type="radio" name="q2" value="0"> Харків</label><br>
+            <label><input type="radio" name="q2" value="0"> Ужгород</label><br>
+          </li>
+          <li>
+            У якому місті знаходиться Софійський собор?
+            <br>
+            <label><input type="radio" name="q3" value="1"> Київ</label><br>
+            <label><input type="radio" name="q3" value="0"> Чернівці</label><br>
+            <label><input type="radio" name="q3" value="0"> Суми</label><br>
+          </li>
+          <li>
+            Що таке Шацькі озера?
+            <br>
+            <label><input type="radio" name="q4" value="1"> Група озер на Волині</label><br>
+            <label><input type="radio" name="q4" value="0"> Печери на Буковині</label><br>
+            <label><input type="radio" name="q4" value="0"> Курорт на Чорному морі</label><br>
+          </li>
+          <li>
+            Де розташований острів Хортиця?
+            <br>
+            <label><input type="radio" name="q5" value="0"> Черкаси</label><br>
+            <label><input type="radio" name="q5" value="1"> Запоріжжя</label><br>
+            <label><input type="radio" name="q5" value="0"> Полтава</label><br>
+          </li>
+        </ol>
+        <button type="button" onclick="checkQuiz()">Перевірити результат</button>
+      </form>
+      
+      <p id="result"></p>
+
+      <script>
+        function checkQuiz() {
+          let total = 0;
+          const form = document.getElementById("quizForm");
+          const questions = [1, 1, 1, 1, 1]; 
+          const result = document.getElementById("result");
+          
+          form.querySelectorAll("label").forEach(label => {
+            label.classList.remove("correct", "wrong");
+          });
+      
+          for (let i = 1; i <= 5; i++) {
+            const selected = form.querySelector(`input[name="q${i}"]:checked`);
+            const inputs = form.querySelectorAll(`input[name="q${i}"]`);
+            inputs.forEach(input => {
+              const label = input.parentElement;
+              if (input.value === "1") {
+                label.classList.add("correct");
+              }
+            });
+      
+            if (selected) {
+              if (selected.value === "1") {
+                total++;
+              } else {
+                selected.parentElement.classList.add("wrong");
+              }
+            }
+          }
+      
+          result.innerHTML = `Ви набрали <strong>${total}</strong> із 5 правильних відповідей.`;
+          result.scrollIntoView({ behavior: "smooth" });
+        }
+      </script>
+      
 
       <h2>Комбінований список</h2>
       <ul>
@@ -241,9 +382,9 @@
       <h2>Карта України</h2>
       <div class="map-container">
         <img src="images/9978bf863b5f78505267b2dd785c06a0.jpg" alt="Карта України" usemap="#ukraineMap">
-        <div class="marker" style="top: 70px; left: 180px;" title="Київ"></div>
-        <div class="marker" style="top: 90px; left: 20px;" title="Львів"></div>
-        <div class="marker" style="top: 180px; left: 160px;" title="Одеса"></div>
+        <div class="marker" style="top: 40px; left: 120px;" title="Київ"></div>
+        <div class="marker" style="top: 60px; left: 20px;" title="Львів"></div>
+        <div class="marker" style="top: 110px; left: 110px;" title="Одеса"></div>
       </div>
 
       <map name="ukraineMap">
