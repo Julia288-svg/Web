@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти - Подорожі Україною</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      margin: 0;
+      padding-top: 80px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      max-width: 1000px;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 0 0 20px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #007acc;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a, nav button {
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #007acc;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .container {
+      background: #ffffff;
+      max-width: 600px;
+      width: 100%;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    h2 {
+      text-align: center;
+      color: #007acc;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00aaff;
+      background-color: #ffffff;
+      outline: none;
+    }
+
+    .checkboxes, .radio-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .checkboxes label, .radio-buttons label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0f8ff;
+      padding: 6px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      margin-top: 25px;
+      background-color: #00aaff;
+      color: #ffffff;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #007acc;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      display: none;
+      margin-top: 5px;
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Подорожі Україною</div>
+        <nav>
+          <a href="index.html">Головна</a>
+          <a href="kyiv.html">Київ</a>
+          <a href="lviv.html">Львів</a>
+          <a href="odesa.html">Одеса</a>
+          <button onclick="window.location.href='contacts.html'">Контакти</button>
+        </nav>
+      </header>
+
+  <div class="container">
+    <h2>Зв'яжіться з нами</h2>
+    <form id="contactForm" novalidate>
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" name="name" required placeholder="Ваше ім'я">
+      <div class="error" id="nameError">Будь ласка, введіть ім'я</div>
+
+      <label for="email">Електронна пошта:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com">
+      <div class="error" id="emailEmptyError">Будь ласка, введіть електронну пошту</div>
+      <div class="error" id="emailFormatError">Невірний формат електронної пошти</div>
+
+      <label for="phone">Телефон:</label>
+      <input type="text" id="phone" name="phone" placeholder="380xxxxxxxxx" inputmode="numeric">
+      <div class="error" id="phoneEmptyError">Будь ласка, введіть номер телефону</div>
+      <div class="error" id="phoneError">Номер повинен містити лише цифри (10–13 символів)</div>
+
+      <label>Стать:</label>
+      <div class="radio-buttons">
+        <label><input type="radio" name="gender" value="male" required> Чоловіча</label>
+        <label><input type="radio" name="gender" value="female"> Жіноча</label>
+        <label><input type="radio" name="gender" value="other"> Інше</label>
+      </div>
+      <div class="error" id="genderError">Оберіть стать</div>
+
+      <label>Цікавлять напрямки:</label>
+      <div class="checkboxes">
+        <label><input type="checkbox" name="interests" value="Карпати"> Карпати</label>
+        <label><input type="checkbox" name="interests" value="Море"> Море</label>
+        <label><input type="checkbox" name="interests" value="Міста"> Міста</label>
+      </div>
+
+      <label for="message">Повідомлення:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Ваше повідомлення..."></textarea>
+
+      <button type="submit">Надіслати</button>
+      <div class="success-message" id="successMessage">Дякуємо за звернення!</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("phone").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "");
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      let valid = true;
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+      const gender = document.querySelector("input[name='gender']:checked");
+
+      document.querySelectorAll(".error").forEach(el => el.style.display = "none");
+      document.getElementById("successMessage").style.display = "none";
+
+      if (!name.value.trim()) {
+        document.getElementById("nameError").style.display = "block";
+        valid = false;
+      }
+
+      if (!email.value.trim()) {
+        document.getElementById("emailEmptyError").style.display = "block";
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        document.getElementById("emailFormatError").style.display = "block";
+        valid = false;
+      }
+
+      if (!phone.value.trim()) {
+        document.getElementById("phoneEmptyError").style.display = "block";
+        valid = false;
+      } else if (!/^\d{10,13}$/.test(phone.value)) {
+        document.getElementById("phoneError").style.display = "block";
+        valid = false;
+      }
+
+      if (!gender) {
+        document.getElementById("genderError").style.display = "block";
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (data[key]) {
+          if (!Array.isArray(data[key])) data[key] = [data[key]];
+          data[key].push(value);
+        } else {
+          data[key] = value;
+        }
+      });
+
+      localStorage.setItem("contactData", JSON.stringify(data));
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

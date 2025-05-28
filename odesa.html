@@ -1,16 +1,171 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Одеса</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Одеса — Перлина Чорного моря</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin-top: 80px !important;
+      background: #f0f4ff;
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      right: 0;
+      background-color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      max-width: 1000px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #007acc;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a, nav button {
+      text-decoration: none;
+      font-size: 16px;
+      color: #007acc;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav button {
+      background: #007acc;
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      max-width: 720px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding: 2rem 3rem;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      background: linear-gradient(90deg, #0073e6, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.2rem;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 115, 230, 0.15);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    a.source-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #007acc;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #007acc;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    button {
+      margin-top: 0px;
+      background: #00d4ff;
+      border: none;
+      border-radius: 30px;
+      padding: 0.9rem 2.4rem;
+      color: #0073e6;
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 6px 18px rgba(0,212,255,0.7);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav button {
+      background: #007acc;
+      color: white;
+      padding: 14px 38px !important;
+      border-radius: 100px !important;
+    }
+    button:hover {
+      background: #00b0e6;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <h1>Одеса</h1>
-    <img src="images/odesa.webp" alt="Одеса">
-    <p>Одеса - місто на березі Чорного моря, відоме своїм гумором, архітектурою та пляжами.</p>
 
-    <a href="https://uk.wikipedia.org/wiki/Одеса" target="_blank">Джерело інформації</a> | 
-    <a href="index.html">На головну</a>
+    <header>
+        <div class="logo">Подорожі Україною</div>
+        <nav>
+          <a href="index.html">Головна</a>
+          <a href="kyiv.html">Київ</a>
+          <a href="lviv.html">Львів</a>
+          <a href="odesa.html">Одеса</a>
+          <button onclick="window.location.href='contacts.html'">Контакти</button>
+        </nav>
+      </header>
+
+  <main class="container">
+    <h1>Одеса — Перлина Чорного моря</h1>
+    <img src="images/odesa.webp" alt="Одеса — вид на місто" />
+    <p>
+      Одеса — портове місто з неповторним колоритом, розташоване на півдні України, на узбережжі Чорного моря. Заснована у 1794 році, вона швидко стала важливим торговим і культурним центром.
+    </p>
+    <p>
+      Одеса славиться своїм почуттям гумору, архітектурною спадщиною, Потьомкінськими сходами, оперним театром, катакомбами і морським вокзалом. Місто також є популярним курортом із численними пляжами, набережними та літніми фестивалями.
+    </p>
+    <p>
+      Це місце, де поєднуються багатонаціональна культура, тепло південного сонця та дух свободи. Саме тому Одесу називають "південною столицею" України.
+    </p>
+
+    <a href="https://uk.wikipedia.org/wiki/Одеса" target="_blank" class="source-link">Джерело: Вікіпедія</a>
+    <br>
+    <a href="index.html" class="back-home">← Повернутися на головну</a>
+  </main>
+
 </body>
 </html>
