@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Збережені Дані</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e0f7fa;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: #fff;
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #007acc;
+      margin-bottom: 20px;
+    }
+
+    .data-item {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #004d66;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Збережені дані користувача</h2>
+    <div id="userData">Завантаження даних...</div>
+
+    <div class="buttons">
+      <button onclick="clearData()">Очистити дані</button>
+      <button onclick="goHome()">Повернутись на головну</button>
+    </div>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("contactData"));
+    const container = document.getElementById("userData");
+
+    if (data) {
+      container.innerHTML = ""; 
+      for (const key in data) {
+        const div = document.createElement("div");
+        div.className = "data-item";
+
+        const label = document.createElement("span");
+        label.className = "label";
+        label.textContent = key + ": ";
+
+        const value = document.createElement("span");
+        value.textContent = Array.isArray(data[key]) ? data[key].join(", ") : data[key];
+
+        div.appendChild(label);
+        div.appendChild(document.createTextNode(" ")); 
+        div.appendChild(value);
+        container.appendChild(div);
+      }
+    } else {
+      container.textContent = "Дані не знайдено.";
+    }
+
+    function clearData() {
+      localStorage.removeItem("contactData");
+      container.textContent = "Дані успішно очищено.";
+    }
+
+    function goHome() {
+      window.location.href = "index.html"; 
+    }
+  </script>
+
+</body>
+</html>

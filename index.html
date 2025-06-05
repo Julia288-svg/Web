@@ -16,6 +16,119 @@
        justify-content: center; padding: 3rem 1rem 0rem 1rem;
        margin-bottom: 0px !important;
     }
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.map-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.map-point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: red;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.map-point:hover {
+  transform: scale(1.4);
+  background-color: #0077cc;
+}
+
+    .menu-block {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  width: 120px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.menu-btn img {
+  width: 130px;
+  height: 120px;
+  margin-bottom: 8px;
+}
+
+.menu-btn:hover {
+  background-color: #e6f3ff;
+  border-color: #a7d3ff;
+  color: #0077cc;
+}
+
+    .table-wrapper {
+
+  background: #fff;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.modern-table {
+  width: 100%;
+
+}
+
+.modern-table caption {
+  caption-side: top;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 1rem 0;
+  text-align: left;
+  color: #444;
+}
+
+.modern-table thead {
+  background-color: #e3eaf3;
+}
+
+.modern-table th,
+.modern-table td {
+  border: 1px solid #ccc;
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.modern-table thead th {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.modern-table tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.modern-table tbody tr:hover {
+  background-color: #e8f1ff;
+  transition: background-color 0.2s;
+}
     header {
       position: fixed;
       top: 0;
@@ -441,23 +554,26 @@ footer {
   <main class="container" role="main" aria-label="Інформація про Україну">
     <h1>Яскраві Подорожі Україною</h1>
     <p>Пізнавайте Україну яскраво, цікаво та з користю! Нижче – ключові міста, факти та інтерактив.</p>
+ <div class="menu-block">
+    <a href="kyiv.html" class="menu-btn active">
+      <img src="images/kyiv.jpg" alt="Київ" />
+      <span>Київ</span>
+    </a>
+    <a href="lviv.html" class="menu-btn">
+      <img src="images/lviv.jpg" alt="Львів" />
+      <span>Львів</span>
+    </a>
+    <a href="odesa.html" class="menu-btn">
+      <img src="images/odesa.webp" alt="Одеса" />
+      <span>Одеса</span>
+    </a>
+    <a href="contacts.html" class="menu-btn">
+      <img src="images/2148597998.jpg" alt="Контакти" />
+      <span>Контакти</span>
+    </a>
+  </div>
 
-    <section class="features" aria-label="Переваги подорожей Україною">
-      <div class="feature-card" aria-hidden="true">
-        <span>🏛️</span>
-        <h3>Багата історія</h3>
-      </div>
-      <div class="feature-card" aria-hidden="true">
-        <span>🌲</span>
-        <h3>Чудова природа</h3>
-      </div>
-      <div class="feature-card" aria-hidden="true">
-        <span>🍽️</span>
-        <h3>Смачна кухня</h3>
-      </div>
-    </section>
   
-
     <section aria-label="Відео про Україну" style="margin-top: 3rem;">
       <h2>Святкові мандрівки Україною</h2>
       <div class="video-wrapper" style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 26px rgba(0,115,230,0.15); margin-bottom: 1rem;">
@@ -474,6 +590,76 @@ footer {
       </p>
     </section>
     
+    <section class="features" aria-label="Переваги подорожей Україною">
+  <div class="features-header">
+    <h2>Чому варто подорожувати Україною?</h2>
+    <p>Україна вражає своєю культурною спадщиною, природною красою та гастрономією. Ось лише кілька причин відвідати її різні куточки:</p>
+  </div>
+
+  <div class="feature-card" aria-hidden="true">
+    <span>🏛️</span>
+    <h3>Багата історія</h3>
+  </div>
+  <div class="feature-card" aria-hidden="true">
+    <span>🌲</span>
+    <h3>Чудова природа</h3>
+  </div>
+  <div class="feature-card" aria-hidden="true">
+    <span>🍽️</span>
+    <h3>Смачна кухня</h3>
+  </div>
+</section>
+
+
+<h2>Таблиця: Населення та особливості міст</h2>
+
+<div class="table-wrapper">
+  <table class="modern-table">
+    <caption>Дані про великі міста України</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Місто</th>
+        <th colspan="2">Характеристики</th>
+      </tr>
+      <tr>
+        <th>Населення (млн)</th>
+        <th>Особливість</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Київ</td>
+        <td>2.9</td>
+        <td>Столиця України</td>
+      </tr>
+      <tr>
+        <td>Львів</td>
+        <td>0.72</td>
+        <td rowspan="2">Культурний та портовий центр</td>
+      </tr>
+      <tr>
+        <td>Одеса</td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Харків</td>
+        <td>1.4</td>
+        <td>Освітній центр</td>
+      </tr>
+      <tr>
+        <td>Дніпро</td>
+        <td>1.0</td>
+        <td rowspan="2">Індустріально-промисловий центр</td>
+      </tr>
+      <tr>
+        <td>Запоріжжя</td>
+        <td>0.73</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
 
     <h2>Типи списків у подорожах</h2>
 
@@ -574,6 +760,16 @@ footer {
       }
     </script>
     
+<h2>Інтерактивна карта України</h2>
+
+  <div class="map-container">
+    <img src="images/9978bf863b5f78505267b2dd785c06a0.jpg" alt="Карта України" class="map-img" />
+
+    <a href="kyiv.html" class="map-point" style="top: 29%; left: 45%;" title="Київ"></a>
+    <a href="lviv.html" class="map-point" style="top: 35%; left: 10%;" title="Львів"></a>
+    <a href="odesa.html" class="map-point" style="top: 70%; left: 45%;" title="Одеса"></a>
+
+  </div>
 
 
     <section aria-label="Місцезнаходження офісу" style="margin-top: 3rem;">
